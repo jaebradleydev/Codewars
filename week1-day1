@@ -1,0 +1,26 @@
+Task:
+Complete function saleHotdogs/SaleHotDogs/sale_hotdogs, function accepts 1 parameter:n, n is the number of hotdogs a customer will buy, different numbers have different prices (refer to the following table), return how much money will the customer spend to buy that number of hotdogs.
+
+number of hotdogs	price per unit (cents)
+n < 5	100
+n >= 5 and n < 10	95
+n >= 10	90
+You can use if..else or ternary operator to complete it.
+
+
+function saleHotdogs(n){
+  //We'll need a variable to return based upon the argument passed
+  var priceOfHotdogs
+  //The first condition will multiply the number ordered by the rate for n < 5
+  if (n < 5) {
+    priceOfHotdogs = 100 * n
+  //Next, we'll set the rate for a double-condition--tested for at once w/ the && operator
+  } else if (n >= 5 && n < 10) {
+    priceOfHotdogs = 95 * n
+  //Last condition will be for thing single condition of n >= 10
+  } else if (n >= 10) {
+    priceOfHotdogs = 90 * n
+  }
+  //The function will return the value based on whatever secondary function applies based upon the value of n
+  return priceOfHotdogs
+}
