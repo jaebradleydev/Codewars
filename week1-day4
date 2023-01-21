@@ -1,0 +1,8 @@
+Task
+Coding in function cutCube. function accept 2 parameter: volume and n. volume is the volume of a cube. If we cut the cube into n block. please determine whether the length of the cube is an integer. return true or false.
+
+function cutCube(volume,n){
+  //Condition 1: the volume must be divisible by the number of cubes (n) in 3D (the cuberoot of n should be an integer, making n a cubic number)
+  //Condition 2: the cuberoot (or length) of a single cube must be evaluated for whether it's an integer 
+  return Number.isInteger(Math.cbrt(n))==true && Number.isInteger(Math.cbrt(volume/n))==true ? true : false
+}
