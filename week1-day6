@@ -1,0 +1,17 @@
+DESCRIPTION:
+In this kata you will create a function that takes a list of non-negative integers and strings and returns a new list with the strings filtered out.
+
+function filter_list(l) {
+  // Return a new array with the stringsfiltered out
+  
+  return l.filter(function(i) {return typeof i == "number" })
+  
+}
+
+REFACTOR
+function filter_list(l) {
+  // Return a new array with the strings filtered out - the .filter() method applies an additional function to the object it's appended to
+  return l.filter(i => {return typeof i == "number"})
+  
+}
+
