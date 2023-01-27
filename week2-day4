@@ -1,1 +1,11 @@
+Task
+Coding in function countAnimals. function accept two parameters: animals, a string contains some animals; count, an array list of which animals we should count. The result should be a number array.
 
+function countAnimals(animals,count){
+  //coding here...
+  var finalCount = []
+  for (i=0; i<count.length; i++) {
+    finalCount.push(animals.split(count[i]).length-1)
+  }
+  return finalCount
+}
