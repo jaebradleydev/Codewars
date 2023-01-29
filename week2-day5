@@ -1,1 +1,24 @@
+Task
+Coding in function findSimilarity. function accept two parameters: str, a sentence contains some words, separated by spaces; word, a sample word.
+
+Your task is to keep the words that are similar to the sample word, and to remove the other words.
+
+The similarity is defined as: the same length as the sample; the letter at the beginning and the end of word are same as the sample too.
+
+If there are no similar words in the sentence, should return an empty string.
+
+
+function findSimilarity(str,word){
+  
+  var reg = new RegExp(str)
+  var stringToArray = str.split(" ");
+  
+  return stringToArray.filter(x => x.length == word.length)
+                      .filter(x => x[0] == word[0])
+                      .filter(x => x[x.length-1] == word[word.length-1])
+                      .join(" ")
+}
+
+
+REGEX SOLUTION
 
