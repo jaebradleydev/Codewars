@@ -25,7 +25,7 @@ tailAndHead([35456,782,569,2454,875]) should return 12012
 
 
 function tailAndHead(arr){
-  //First, we can create a new empty array to use to reassign its soon-to-be elements as the sum of digits from  the original arraythe 
+  //First, we can create a new empty array to use to reassign its soon-to-be elements as the sum of digits from  the original array
   let headAndTail = [];
 
   //The sum/new array elements and be created by looping through the original array and selecting the last and first respective digits of the current index and the next index in string form then adding their numberized forms
