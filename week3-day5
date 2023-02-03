@@ -1,6 +1,7 @@
 DESCRIPTION:
 Your task is to find the nearest square number, nearest_sq(n), of a positive integer n.
 
+****************************
 
 function nearestSq(n){
     //Squares are integers and squareroots are integers, thus we can use floor and ceil methods to find the closest values to n
@@ -10,4 +11,12 @@ function nearestSq(n){
     //Whichever difference is smaller will produce the closer square (because multiplication won't change the distance), and we can return this value by using ? and returning an answer based on whichever end is closer
 
     return (Math.sqrt(n)-Math.floor(Math.sqrt(n))) > (Math.ceil(Math.sqrt(n)) - Math.sqrt(n)) ? Math.pow(Math.ceil(Math.sqrt(n)),2) : Math.pow(Math.floor(Math.sqrt(n)),2)
+}
+*****************************
+          REFACTOR
+*****************************
+
+function nearestSq(n){
+    //A simpler way would be to use the round() method, which can round both up and down, eliminating the need to find the square of both -- whichever end is closer will be the one that produces the square we need
+    return Math.pow(Math.round(Math.sqrt(n)),2)
 }
