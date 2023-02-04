@@ -1,1 +1,17 @@
+DESCRIPTION:
+Convert a hash into an array. Nothing more, Nothing less.
 
+{name: 'Jeremy', age: 24, role: 'Software Engineer'}
+should be converted into
+
+[["age", 24], ["name", "Jeremy"], ["role", "Software Engineer"]]
+Note: The output array should be sorted alphabetically by key name.
+
+Good Luck!
+
+
+function convertHashToArray(hash){
+  //We can map onto each key the array format that's desired, then sort alphabetically (since the data is ordered by  keys, we can slap on a sort method and it will target the keys)
+  return Object.keys(hash).map(key => [key,hash[key]]).sort()
+  //"key" will be the parameter of the map function - it goes in and is placed in an array with its corresponding value
+}
