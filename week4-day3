@@ -1,1 +1,20 @@
+Cubes in the box
+Your job is to write a function f(x,y,z) to count how many cubes of any size can fit inside a x*y*z box. For example, a 2*2*3 box has 12 1*1*1 cubes, 2 2*2*2 cubes, so a total of 14 cubes in the end.
 
+Notes:
+x,y,z are strictly positive and will not be too big.
+fun fact (unrelated...): there are 11 unique cube nets
+
+
+function f(x,y,z){
+  // We can set a variable with a value of 0 to add the total number of cubes to
+  var numCubes = 0;
+  // We can use a while loop to set the lowest unit value as the limiting value and cube 1 unit less on dimension. With all dimensions added, we'll have the total amount in cubes that fit
+  while (x>0 && y>0 && z>0) {
+    numCubes += x*y*z
+    x -= 1;
+    y -= 1;
+    z -= 1;
+  }
+  return numCubes
+}
