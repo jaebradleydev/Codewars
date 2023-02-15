@@ -19,5 +19,19 @@ After 2nd Year -->
 After 3rd Year -->
   P = 1128.30
 
+Thus Mr. Scrooge has to wait for 3 years for the initial principal to amount to the desired sum.
 
+Your task is to complete the method provided and return the number of years 'Y' as a whole in order for Mr. Scrooge to get the desired sum.
 
+Assumption: Assume that Desired Principal 'D' is always greater than the initial principal. However it is best to take into consideration that if Desired Principal 'D' is equal to Principal 'P' this should return 0 Years.
+
+function calculateYears(principal, interest, tax, desired) {
+  // we can set a number variable to 0 and add years one by one according to our formula for determining when the desired amount is reached
+  var yearsToDesired = 0;
+  // we can use a while loop to make it so that until the desired amount is reached, one year will be added to the total each time the interest rate minus the taxed amount is accrued beyond the principal
+  while (principal < desired){
+    principal += (principal*interest)-(principal*interest*tax);
+    yearsToDesired++
+  }
+  return yearsToDesired
+}
