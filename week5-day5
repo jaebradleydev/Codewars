@@ -1,1 +1,7 @@
+Write a function that checks if a given string (case insensitive) is a palindrome.
 
+
+function isPalindrome(x) {
+  // a palindrome will have the same letter order in reverse, thus we can turn the string into an array and use the reverse method to verify
+    return x.split("").reverse().join("").toUpperCase() == x.toUpperCase() ? true : false
+}
