@@ -1,1 +1,29 @@
+DESCRIPTION:
+Your task, is to create N×N multiplication table, of size provided in parameter.
 
+For example, when given size is 3:
+
+1 2 3
+2 4 6
+3 6 9
+For the given example, the return value should be:
+
+[[1,2,3],[2,4,6],[3,6,9]]
+
+
+multiplicationTable = function(size) {
+  //The final result will be a 2D array, so we'll declare the outer array
+  var finalArrayGroup = [];
+  //Next, we can use a for loop to create *size* number of arrays in the second dimension. A second variable can have each value pushed into it, then get pushed to the outer array
+  for (i=1; i<=size; i++) {
+    var multipleArr = [];
+  //Within the loop, we'll create another loop to push each i value's multiples up to size no. of elements. This is essentially the first loop's current index times the second loop's current index 
+  //For ex. on the first array (first inner array), we'll push the multiples of 1 (1*1, 1*2, 1*3...). This will be the outer current index*inner current index, here i*j
+    for (j=1; j<=size; j++) {
+      multipleArr.push(j*i)
+    }
+    
+    finalArrayGroup.push(multipleArr)
+  }
+  return finalArrayGroup
+}
