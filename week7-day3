@@ -8,12 +8,16 @@ Example:
 
 
 var greet = function(name) {
+  //We can use concatenation to build our sentence and use a variable in the middle of our expression to adjust to the name input
+  //First we can declare the first letter of the name to make sure it's uppercase, and declare another as an empty array to make sure the rest is lowercase
   var firstLetter = name[0].toUpperCase();
   var remainder = [];
+  
+  //Next, we'll use a for loop to pass each remaining letter, now lowercase, into the empty array, before joining the letters
   for (i=1; i<name.length; i++) {
-    name[i].toLowerCase();
-    remainder.push(name[i])
+    var newLetter = name[i].toLowerCase();
+    remainder.push(newLetter);
   }
-  remainder.join("");
-  return remainder //`Hello`+` `+firstLetter+remainder+`!`
+  remainder = remainder.join("");
+  return `Hello`+` `+firstLetter+remainder+`!`
 };
