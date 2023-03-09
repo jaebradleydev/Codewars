@@ -1,1 +1,16 @@
+DESCRIPTION:
+When provided with a String, capitalize all vowels
 
+For example:
+
+Input : "Hello World!"
+
+Output : "HEllO WOrld!"
+
+Note: Y is not a vowel in this kata.
+
+
+function swap (string) {
+  //We can replace each instance of a vowel using regex: the brackets [] will search for any given vowel within the // within the passed string, and g will search for all instead of stopping at the first encountered
+  return string.replace(/[aeiou]/g, x=>x.toUpperCase())
+}
