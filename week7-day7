@@ -6,3 +6,11 @@ Examples (input -> output)
 5, "Hello" -> "HelloHelloHelloHelloHello"
 
 
+function repeatStr (n, s) {
+//We can use a loop that cycles n number of times to add the string s to an empty array. Then we can join it all, and the result will be a string s repeated n times
+  var finishedPattern=[];
+  for (i=0; i<n; i++){
+    finishedPattern.push(s)
+  }
+  return finishedPattern.join('');
+}
