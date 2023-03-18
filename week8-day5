@@ -1,1 +1,36 @@
+DESCRIPTION:
+Write a function that takes a string of parentheses, and determines if the order of the parentheses is valid. The function should return true if the string is valid, and false if it's invalid.
 
+Examples
+"()"              =>  true
+")(()))"          =>  false
+"("               =>  false
+"(())((()())())"  =>  true
+Constraints
+0 <= length of input <= 100
+
+All inputs will be strings, consisting only of characters ( and ).
+Empty strings are considered balanced (and therefore valid), and will be tested.
+For languages with mutable strings, the inputs should not be mutated.
+
+Protip: If you are trying to figure out why a string of parentheses is invalid, paste the parentheses into the code editor, and let the code highlighting show you!
+
+
+
+
+function validParentheses(parenStr) {
+  //We can create a number variable of 0 and use +/- to see if there's a balance of each parend at the end
+  var parendBalance = 0;
+  //A for loop can take us through the string to figure out how things balance, adding for "(" and subtracting for ")"
+  for (i=0; i<parenStr.length; i++){
+    if (parenStr[i]==="\("){
+      parendBalance++
+    } else parendBalance-- 
+  //Since we've associated the "(" parend with a positive "balance," if the total hits the negatives, we'll know a set has been erroneously begun with ")"
+  // For this, we can return a Boolean value of "false" if the total, at any point in the loop, goes below 0
+    if (parendBalance < 0) {
+      return false;
+    } 
+  }
+  return parendBalance === 0
+}
