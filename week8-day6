@@ -1,1 +1,23 @@
+Your task is to make a function that can take any non-negative integer as an argument and return it with its digits in descending order. Essentially, rearrange the digits to create the highest possible number.
 
+Examples:
+
+Input: 42145 Output: 54421
+
+Input: 145263 Output: 654321
+
+Input: 123456789 Output: 987654321
+
+
+*********************************************
+
+function descendingOrder(n){
+  //We can convert the number to a string to an srray to allow us to sort esch digit individuallt
+  let s = n.toString();
+  
+  let spl = s.split("");
+  //Once split, we'll use the sort function for descending order, with the first parameter subtracted from the second
+  let a = spl.sort((a,b)=> b-a, 0)
+  //Finally, once the array of digits is sorted, we can join them into a string and make it all a number again
+  return Number(a.join(""))
+}
