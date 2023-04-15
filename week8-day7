@@ -1,1 +1,25 @@
+Count the number of divisors of a positive integer n.
 
+Random tests go up to n = 500000.
+
+Examples (input --> output)
+4 --> 3 (1, 2, 4)
+5 --> 2 (1, 5)
+12 --> 6 (1, 2, 3, 4, 6, 12)
+30 --> 8 (1, 2, 3, 5, 6, 10, 15, 30)
+Note you should only return a number, the count of divisors. The numbers between parentheses are shown only for you to see which numbers are counted in each case.
+
+
+
+********************************************************************************************************************************
+
+function getDivisorsCnt(n){
+  // We can check which numbers less than or equal to "n" are its divisors by using a loop to check for each number that doesn't leave a remainder behind
+  //To do this, we'll open an empty count variable and establish a for loop that takes us from 0 to the value of n
+  var count=0;
+  for (i=0; i<=n ;i++){
+  //We can use n%i===0 as a standard for what qualifies a divisor (a proper divisor will be divided into n and leave no remainder) and a ternary operator to add one to the divisor counter if the expression is true and add nothing if false
+    n%i===0 ? count++: count+=0
+  }
+  return count
+}
